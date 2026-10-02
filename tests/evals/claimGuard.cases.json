@@ -1,0 +1,74 @@
+[
+  {
+    "id": "case-01",
+    "claim": "Deploy to .app.space with a single command using npx deepspace deploy",
+    "expectedVerdict": "supported",
+    "description": "True technical claim directly supported by quickstart guide."
+  },
+  {
+    "id": "case-02",
+    "claim": "Cloudflare Workers with SQLite-backed Durable Objects for live data sync",
+    "expectedVerdict": "supported",
+    "description": "True technical architecture claim supported by concepts/architecture."
+  },
+  {
+    "id": "case-03",
+    "claim": "Built-in auth handles GitHub and Google OAuth without passwords",
+    "expectedVerdict": "supported",
+    "description": "True claim supported by auth guide."
+  },
+  {
+    "id": "case-04",
+    "claim": "Server actions provide privileged worker-side execution bypassing user RBAC",
+    "expectedVerdict": "supported",
+    "description": "True claim directly supported by server actions guide."
+  },
+  {
+    "id": "case-05",
+    "claim": "AI proxy routes Anthropic and OpenAI without storing API keys in code",
+    "expectedVerdict": "supported",
+    "description": "True security claim supported by AI worker reference."
+  },
+  {
+    "id": "case-06",
+    "claim": "Realtime presence and cursors synced via ephemeral WebSocket rooms",
+    "expectedVerdict": "supported",
+    "description": "True claim supported by presence guide."
+  },
+  {
+    "id": "case-07",
+    "claim": "Requires Node 22.15+ and npm 11.6+ when using npm",
+    "expectedVerdict": "supported",
+    "description": "True prerequisite claim supported by installation guide."
+  },
+  {
+    "id": "case-08",
+    "claim": "Offers infinite cloud computing at zero cost forever",
+    "expectedVerdict": "unsupported",
+    "description": "Ungrounded superlative guarantee that must be flagged."
+  },
+  {
+    "id": "case-09",
+    "claim": "Guaranteed zero latency and 100% bug-free deployment",
+    "expectedVerdict": "unsupported",
+    "description": "Ungrounded impossible guarantee."
+  },
+  {
+    "id": "case-10",
+    "claim": "Automatically converts Figma designs to Swift iOS apps with no code required",
+    "expectedVerdict": "unsupported",
+    "description": "Fabricated feature not present in DeepSpace documentation."
+  },
+  {
+    "id": "case-11",
+    "claim": "Deploys to AWS Lambda and Google Kubernetes Engine clusters",
+    "expectedVerdict": "unsupported",
+    "description": "Technically false infrastructure claim (DeepSpace runs on Cloudflare Workers, not AWS Lambda)."
+  },
+  {
+    "id": "case-12",
+    "claim": "Includes built-in blockchain smart contract validation on Ethereum",
+    "expectedVerdict": "unsupported",
+    "description": "Completely unrelated technology claim."
+  }
+]
