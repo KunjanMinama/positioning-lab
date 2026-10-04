@@ -12,3 +12,11 @@ playwright-report/
 src/router.ts
 src/modals.tsx
 .claude/
+.agents/
+LEARN/
+AGENT_LOG.md
+AGENTS.md
+CLAUDE.md
+POSITIONING_LAB_AGENT_BRIEF.md
+SUBMISSION_WRITEUP.md
+*.code-workspace

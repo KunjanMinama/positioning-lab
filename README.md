@@ -133,36 +133,43 @@ Visit `http://localhost:5173` to explore the app.
 
 ---
 
-## 8. Learning Deliverable Suite (`LEARN/`)
+## 8. Project Structure
 
-This repository contains a complete 15-document educational suite written so any engineer can understand and explain every aspect of this project without looking at notes:
-
-- [LEARN/00-overview.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/00-overview.md): 1-minute, 5-minute, and 15-minute project breakdowns.
-- [LEARN/01-architecture.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/01-architecture.md): Request lifecycles and edge runtime flow.
-- [LEARN/02-sdk-primitives.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/02-sdk-primitives.md): DeepSpace integration breakdown with spoken scripts.
-- [LEARN/03-data-and-permissions.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/03-data-and-permissions.md): RBAC matrix across all 11 collections.
-- [LEARN/04-stats-explained.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/04-stats-explained.md): Plain-English Wilson score guide and hand-calculation.
-- [LEARN/05-ai-and-claim-guard.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/05-ai-and-claim-guard.md): Ground-truth evals and prompt-injection defense.
-- [LEARN/06-security-and-privacy.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/06-security-and-privacy.md): Privacy by design and zero-secrets architecture.
-- [LEARN/07-gtm-concepts.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/07-gtm-concepts.md): Developer funnels, intent proxies, and decision rules.
-- [LEARN/08-tradeoffs.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/08-tradeoffs.md): Why payments/R2 were omitted, limitations, and roadmap.
-- [LEARN/09-my-verification.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/09-my-verification.md): Personal verification log and hand-calculations.
-- [LEARN/10-code-walkthrough.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/10-code-walkthrough.md): Tour of top 10 files and 5 live coding drills.
-- [LEARN/11-debugging-playbook.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/11-debugging-playbook.md): How to read stack traces and narrate live debugging.
-- [LEARN/12-interview-qa.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/12-interview-qa.md): Live coding drills, 6-bug bank, and GTM interview prep.
-- [LEARN/13-self-quiz.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/13-self-quiz.md): 42 comprehensive interview questions with `<details>` answers.
-- [LEARN/SKILL.md](file:///c:/Users/ASUS/Desktop/Positioning%20Lab/LEARN/SKILL.md): Interactive agent coaching skill.
+```
+positioning-lab/
+├── src/
+│   ├── actions/          # Edge Server Actions (mutations, validation, bot filtering)
+│   ├── components/       # Reusable UI component library (Tailwind v4)
+│   ├── lib/              # Core algorithmic modules
+│   │   ├── assign.ts     # 32-bit FNV-1a deterministic hash & channel sanitizer
+│   │   ├── bots.ts       # Privacy-preserving bot crawler filter
+│   │   ├── claimGuard.ts # Ground-truth fact verification & buzzword guard
+│   │   ├── schemas.ts    # Zod schemas for runtime validation
+│   │   └── stats.ts      # 95% Wilson score interval & 3-state status gate
+│   ├── pages/            # Generouted file-based edge routes
+│   │   ├── index.tsx     # Public hero & methodology overview
+│   │   ├── t/[slug].tsx  # Public deterministic experiment test page
+│   │   └── (app)/        # Authenticated experiment workspaces, facts & playbooks
+│   └── schemas/          # SQLite RecordRoom schema definitions (RBAC)
+├── tests/
+│   ├── evals/            # Ground-truth benchmark datasets (Claim Guard)
+│   ├── unit/             # Pure unit tests (stats, assign, bots, claimGuard)
+│   └── experiment-flow.spec.ts # Playwright multi-user flow specification
+├── wrangler.toml         # Cloudflare Workers edge configuration
+└── package.json          # Dependencies & build scripts
+```
 
 ---
 
-## 9. Deployment to DeepSpace
+## 9. Production Deployment
 
-To deploy Positioning Lab to production:
+The application is deployed globally at the Cloudflare Workers edge via the DeepSpace platform:
+
+- **Live URL:** [https://positioning-lab.app.space](https://positioning-lab.app.space)
+- **App ID:** `app_01M43S07A5JMF05YB0JWJK70ZX`
+
+To deploy updates:
 ```bash
-# 1. Log into your DeepSpace developer account
-npx deepspace auth login
-
-# 2. Deploy directly to the edge
 npx deepspace deploy
 ```
-The application will be live at `https://<your-app-name>.app.space`.
+
