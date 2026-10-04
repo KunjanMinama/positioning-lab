@@ -27,7 +27,7 @@ run_worker_first = ["/api/*", "/ws/*", "/internal/*", "/v1/*", "/_deepspace/*", 
 # subdomain label the next deploy claims; this id never changes — data,
 # secrets, and collaborators all key to it. Renames are safe.
 [vars]
-DEEPSPACE_APP_ID = "app_01J9X4T7B00000000000000000"
+DEEPSPACE_APP_ID = "app_01M43S07A5JMF05YB0JWJK70ZX"
 APP_NAME = "positioning-lab"
 # Exact comma-separated native callback URIs. Set this before deploying an
 # Expo client, for example: "veriluma://auth/callback".
