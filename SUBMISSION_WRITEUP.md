@@ -1,5 +1,9 @@
 # DeepSpace Build Exercise: Submission Writeup
 
+- **Live URL:** https://positioning-lab.app.space
+- **App ID:** `app_01M43S07A5JMF05YB0JWJK70ZX`
+- **Platform:** Cloudflare Workers Edge via DeepSpace SDK
+
 ### 1. What I Built
 I built **Positioning Lab**, a full-stack developer marketing experimentation platform on DeepSpace. It allows GTM engineers to pre-register positioning hypotheses and decision rules, ground AI-drafted messaging against official documentation (`docs.deep.space`) via **Claim Guard**, deterministically assign public visitors to variants without collecting personal data, and evaluate developer intent conversions using an honest 3-state statistical status gate.
 

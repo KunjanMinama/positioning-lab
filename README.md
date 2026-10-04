@@ -3,6 +3,7 @@
 > **A rigorous developer marketing experimentation engine for DeepSpace.**  
 > Pre-register positioning hypotheses and decision rules, ground AI copy against official documentation with **Claim Guard**, deterministically assign public visitors via FNV-1a hashing, and prevent premature victory declarations with a mathematical **3-state Wilson status gate**.
 
+[![Live App](https://img.shields.io/badge/Live_App-positioning--lab.app.space-blueviolet.svg)](https://positioning-lab.app.space)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
 [![DeepSpace SDK](https://img.shields.io/badge/DeepSpace-Edge_Platform-orange.svg)](https://docs.deep.space)
 [![Claim Guard Evals](https://img.shields.io/badge/Claim_Guard-12%2F12_(100%25)-green.svg)](tests/evals/claimGuard.cases.json)
